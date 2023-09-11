@@ -1,0 +1,23 @@
+server:
+  port: 8083
+spring:
+  profiles:
+    active: dev
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  application:
+    name: REFERRAL-SERVICE
+
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+
+reward:
+  balance: 10
