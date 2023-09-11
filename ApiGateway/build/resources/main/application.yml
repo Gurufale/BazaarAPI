@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: http://localhost:8082
+          predicates:
+            - Path=/user/**
+
+        - id: REFERRAL-SERVICE
+          uri: http://localhost:8083
+          predicates:
+            - Path=/referral/**
+
+        - id: CART-SERVICE
+          uri: http://localhost:8084
+          predicates:
+            - Path=/cart/**
+          filters:
+            - AuthenticationFilter
+
+        - id: PRODUCT-SERVICE
+          uri: http://localhost:8081
+          predicates:
+            - Path=/product/**
+          filters:
+            - AuthenticationFilter
