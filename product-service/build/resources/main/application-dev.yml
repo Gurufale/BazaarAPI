@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bazaar_db
+    username: root
+    password: JulyNewCode@2023
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  flyway:
+    table: product_history_schema_table
+    baselineOnMigrate: true
+    baseline-on-migrate: true
+    spring.flyway.baseline-version: 1
+
+server:
+  port: 8081

@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:h2:mem:bazaar_db
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+
+  flyway:
+    enabled: false
+
+  jpa:
+    show-sql: true
+    hibernate:
+        ddl-auto: create
